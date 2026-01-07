@@ -1,12 +1,14 @@
+"use client";
 import React from "react";
 import { useDraggable } from "@dnd-kit/core";
-interface DraggableProps {
+
+interface HeaderProps {
   children: React.ReactNode;
-  id?: string;
+  id: string;
 }
-function Draggable(props: DraggableProps) {
+function Header(props: HeaderProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: "draggable",
+    id: props.id,
   });
   const style = transform
     ? {
@@ -15,10 +17,10 @@ function Draggable(props: DraggableProps) {
     : undefined;
 
   return (
-    <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
+    <h1 ref={setNodeRef} style={style} {...listeners} {...attributes}>
       {props.children}
-    </button>
+    </h1>
   );
 }
 
-export default Draggable;
+export default Header;

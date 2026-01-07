@@ -5,16 +5,29 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
+  SidebarGroupLabel,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import Header from "@/components/modularcomponents/header";
 
-function Appsidebar() {
+interface AppsidebarProps {
+  setiteambeingdrag: (item: React.ReactNode) => void;
+}
+
+function Appsidebar({ setiteambeingdrag }: AppsidebarProps) {
   return (
     <Sidebar>
       <SidebarHeader />
-      <SidebarContent>
-        <SidebarGroup />
-        <SidebarGroup />
-      </SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Components</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <Header id="h">This is an header</Header>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
       <SidebarFooter />
     </Sidebar>
   );

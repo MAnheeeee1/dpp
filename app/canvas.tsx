@@ -1,15 +1,24 @@
 "use client";
 import React from "react";
+import { useDroppable } from "@dnd-kit/core";
 
-function Canvas() {
-  const firstTime = true;
-  if (firstTime) {
-    return (
-      <div>
-        <h1>Start creating your awesome dpp site</h1>
-      </div>
-    );
-  } else return <div>Not first time</div>;
+interface CanvasProps {
+  children?: React.ReactNode;
+}
+
+function Canvas({ children }: CanvasProps) {
+  const { isOver, setNodeRef } = useDroppable({
+    id: "droppable",
+  });
+  const style = {
+    color: isOver ? "green" : undefined,
+  };
+
+  return (
+    <div ref={setNodeRef} style={style} className="bg-amber-300 w-full">
+      {children || "Start creating your dpp"}
+    </div>
+  );
 }
 
 export default Canvas;
