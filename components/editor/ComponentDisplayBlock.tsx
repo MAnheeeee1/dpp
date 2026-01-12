@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
-
-function ComponentDisplayBlock({ componentName }: { componentName: string }) {
+import type { Block } from "@/lib/renderer";
+function ComponentDisplayBlock({
+  componentName,
+  setLayout,
+}: {
+  componentName: string;
+  setLayout: (layout: Block[]) => void;
+}) {
   function handleClick() {
     console.log("WOrking");
   }
