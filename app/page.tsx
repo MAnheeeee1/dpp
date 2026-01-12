@@ -20,7 +20,6 @@ export default function Home() {
           imageUrl="https://gokyo.in/cdn/shop/files/k2_downfill_jacket.jpg?v=1711966418"
           description="EN jacka"
         />
-        <Button />
       </EditorCanvas>
     </div>
   );
