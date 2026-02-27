@@ -9,7 +9,7 @@ function ComponentDisplayBlock({
   setLayout: (layout: Block[]) => void;
 }) {
   function handleClick() {
-    console.log("WOrking");
+    
   }
   return (
     <div
